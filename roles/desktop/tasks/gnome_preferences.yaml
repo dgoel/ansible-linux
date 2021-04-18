@@ -1,0 +1,22 @@
+- name: gnome | preferences | install dconf
+  tags: gnome,preferences,dconf
+  package:
+    name:
+      - dconf-cli
+
+- name: gnome | preferences | check key is present
+  tags: gnome,preferences,check
+  become_user: "{{ username }}"
+  dconf:
+    key: "{{ item.key}}"
+    state: read
+  with_items: "{{ gnome_preferences }}"
+
+- name: gnome | preferences | set key-value
+  tags: gnome,preferences,set
+  become_user: "{{ username }}"
+  dconf:
+    key: "{{ item.key}}"
+    value: "{{ item.value }}"
+    state: present
+  with_items: "{{ gnome_preferences }}"

@@ -1,0 +1,6 @@
+- name: packages | debloat | remove unneeded packages
+  tags: packages,system,debloat,cleanup
+  package:
+    state: absent
+    name:
+      - rhythmbox

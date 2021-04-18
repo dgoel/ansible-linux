@@ -1,0 +1,24 @@
+---
+
+# pre-run tasks
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: pre-run | update apt package cache
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+
+# run roles
+- hosts: localhost
+  tags: home
+  become: true
+  roles:
+    - base
+    - desktop
+
+- hosts: localhost
+  tags: work
+  become: true
+  roles:
+    - base

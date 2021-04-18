@@ -1,0 +1,11 @@
+- block:
+
+  # Manage packages
+  - import_tasks: debloat.yaml
+  # - import_tasks: packages.yaml
+
+  # Configure gnome desktop environment
+  - import_tasks: gnome_preferences.yaml
+
+  rescue:
+    - set_fact: task_failed=true

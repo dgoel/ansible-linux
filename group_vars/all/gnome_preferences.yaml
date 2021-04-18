@@ -1,0 +1,62 @@
+---
+gnome_preferences:
+  # Background desktop icons
+  - key: "/org/gnome/desktop/background/color-shading-type"
+    value: "'solid'"
+  - key: "/org/gnome/desktop/background/picture-options"
+    value: "'zoom'"    
+  - key: "/org/gnome/desktop/background/show-desktop-icons"
+    value: "false"
+
+  # Calendar
+  - key: "/org/gnome/desktop/calendar/show-weekdate"
+    value: "true"
+
+  # Gnome Desktop
+  - key: "/org/gnome/desktop/interface/clock-format"
+    value: "'12h'"
+  - key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+  - key: "/org/gnome/desktop/interface/clock-show-weekday"
+    value: "true"
+  - key: "/org/gnome/desktop/interface/document-font-name"
+    value: "'Ubuntu 11'"
+  - key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Yaru'"
+  - key: "/org/gnome/desktop/interface/text-scaling-factor"
+    value: "1.0"
+  - key: "/org/gnome/desktop/interface/toolkit-accessibility"
+    value: "false"
+  - key: "/org/gnome/desktop/media-handling/autorun-never"
+    value: "true"
+  - key: "/org/gnome/desktop/wm/preferences"
+    value: "'Ubuntu 10'"
+
+  # Gnome Terminal
+  - key: "/org/gnome/terminal/legacy/default-show-menubar"
+    value: "false"
+
+  # Meld
+  - key: "/org/gnome/meld/highlight-current-line"
+    value: "true"
+  - key: "/org/gnome/meld/highlight-syntax"
+    value: "true"
+  - key: "/org/gnome/meld/indent-width"
+    value: "4"
+  - key: "/org/gnome/meld/show-line-numbers"
+    value: "true"
+
+  # Night Light
+  - key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+  - key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic"
+    value: "true"
+  - key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-to"
+    value: "7.0"
+
+  # Xsettings
+  - key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing"
+    value: "'rgba'"
+  - key: "/org/gnome/settings-daemon/plugins/xsettings/hinting"
+    value: "'medium'"
+  

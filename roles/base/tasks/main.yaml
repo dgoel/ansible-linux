@@ -1,0 +1,17 @@
+# Load distro-specific variables
+- include_vars: "{{ ansible_distribution }}.yaml"
+  tags: always
+
+- block:
+  # Set up ansible
+  - import_tasks: ansible_setup.yaml
+
+  # Manage packages
+  - import_tasks: packages/dev.yaml
+  - import_tasks: packages/utils.yaml
+
+  # Admin tasks
+  - import_tasks: admin/journalctl.yaml
+
+  rescue:
+    - set_fact: task_failed=true

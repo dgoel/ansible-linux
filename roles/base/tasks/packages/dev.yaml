@@ -1,0 +1,65 @@
+- name: packages | install | vcs
+  tags: packages,system,dev,development,vcs
+  package:
+    name:
+      - git
+      - gitk
+      #- git-doc
+      - git-extras
+      - git-gui
+      - git-lfs
+    state: latest
+
+
+- name: packages | install | editors
+  tags: packages,system,dev,development,editors
+  package:
+    name:
+      - vim
+      - emacs
+    state: latest
+
+
+- name: packages | install | dev tools
+  tags: packages,system,dev,development
+  package:
+    name:
+      - build-essential
+      #- ccache
+      - cmake
+      - diffoscope
+      - meld
+      - ninja-build
+      #- pkg-config
+    state: latest
+
+
+- name: packages | install | clang
+  tags: packages,system,dev,development,clang
+  package:
+    name:
+      - clang-{{ llvm_version }}
+      - clangd-{{ llvm_version }}
+      - clang-tools-{{ llvm_version }}
+    state: latest
+
+
+- name: packages | install | python
+  tags: packages,system,dev,development,python
+  package:
+    name:
+      - python3
+      - ipython3
+      - python3-pip
+    state: latest
+
+
+- name: packages | install | fonts
+  tags: packages,system,dev,development,font
+  package:
+    name:
+      - fonts-inconsolata
+      - fonts-liberation
+      - fonts-crosextra-caladea
+      - fonts-crosextra-carlito
+    state: latest

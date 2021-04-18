@@ -1,0 +1,12 @@
+- name: packages | install | install utility packages
+  tags: packages,system,utility
+  package:
+    state: latest
+    name:
+      - colordiff
+      - curl
+      - htop
+      - iotop
+      - lsof
+      - rsync
+      - tmux
