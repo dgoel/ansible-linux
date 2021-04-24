@@ -34,6 +34,17 @@
     state: latest
 
 
+- name: packages | install | dev utils
+  tags: packages,system,utils
+  package:
+    name:
+      - bat
+      - ripgrep
+      - fd-find
+      - fzf
+    state: latest
+
+
 - name: packages | install | clang
   tags: packages,system,dev,development,clang
   package:
