@@ -4,7 +4,7 @@ gnome_preferences:
   - key: "/org/gnome/desktop/background/color-shading-type"
     value: "'solid'"
   - key: "/org/gnome/desktop/background/picture-options"
-    value: "'zoom'"    
+    value: "'zoom'"
   - key: "/org/gnome/desktop/background/show-desktop-icons"
     value: "false"
 
@@ -59,4 +59,32 @@ gnome_preferences:
     value: "'rgba'"
   - key: "/org/gnome/settings-daemon/plugins/xsettings/hinting"
     value: "'medium'"
-  
+
+  # Extensions
+  # desktop-icons
+  - key: "/org/gnome/shell/extensions/desktop-icons/show-home"
+    value: "false"
+  - key: "/org/gnome/shell/extensions/desktop-icons/show-trash"
+    value: "false"
+  # ding
+  - key: "/org/gnome/shell/extensions/ding/add-volumes-opposite"
+    value: "false"
+  - key: "/org/gnome/shell/extensions/ding/show-home"
+    value: "false"
+  - key: "/org/gnome/shell/extensions/ding/show-trash"
+    value: "false"
+  - key: "/org/gnome/shell/extensions/ding/show-volumes"
+    value: "false"
+  # dock
+  - key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
+    value: "24"
+  - key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    value: "false"
+
+  # Power
+  - key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout"
+    value: "1800"
+  - key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type"
+    value: "'suspend'"
+  - key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout"
+    value: "900"

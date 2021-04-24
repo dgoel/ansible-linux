@@ -63,3 +63,11 @@
       - fonts-crosextra-caladea
       - fonts-crosextra-carlito
     state: latest
+
+
+- name: packages | install | containers
+  tags: packages,system,dev,development,containers
+  package:
+    name:
+      - podman
+    state: latest
