@@ -1,0 +1,21 @@
+- name: Linux local | create directory
+  tags: linux_local,directory,dir
+  become_user: "{{ username }}"
+  file:
+    path: /home/{{ username }}/{{ linux_local_dir }}
+    state: directory
+
+- name: Linux local | clone github repo
+  tags: linux_local,git,clone
+  become_user: "{{ username }}"
+  git:
+    repo: https://github.com/dgoel/linux_local
+    dest: /home/{{ username }}/{{ linux_local_dir }}
+
+- name: Linux local | install stow
+  tags: linux_local,install,stow
+  package:
+    state: latest
+    name:
+      - stow
+
