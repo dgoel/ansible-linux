@@ -17,8 +17,8 @@
     - base
     - desktop
 
-- hosts: localhost
-  tags: work
-  become: true
-  roles:
-    - base
+# - hosts: localhost
+#   tags: work
+#   become: true
+#   roles:
+#     - base
