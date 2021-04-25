@@ -42,6 +42,8 @@
       - ripgrep
       - fd-find
       - fzf
+      - tldr
+      - zeal
     state: latest
 
 
