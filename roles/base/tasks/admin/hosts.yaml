@@ -1,0 +1,49 @@
+---
+- name: Admin | Hosts | Download denylist
+  tags: admin,hosts,download
+  get_url:
+    url: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
+    # root mode so that malicious actors can't modify it
+    mode: 0444
+    force: yes
+    dest: /tmp/hosts_tmp
+
+
+- name: Admin | Hosts | Remove localhost rules
+  tags: admin,hosts,fixup
+  replace:
+    path: /tmp/hosts_tmp
+    regexp: '^{{ item }}.+$'
+    backup: yes
+  with_items: ['255.255.255.255 ', '127.0.0.1 ', '::1 ', 'f[ef][0-8][0-8]::[0-3]']
+
+
+- name: Admin | Hosts | Allow certain sites
+  tags: admin,hosts,fixup
+  replace:
+    path: /tmp/hosts_tmp
+    regexp: '^(0.0.0.0 .+{{ item }})$'
+    replace: '#\1'
+    backup: yes
+  with_items: ['linkedin.com', 'reddit.com']
+
+
+- name: Admin | Hosts | Append to hosts file
+  tags: admin,hosts,update
+  become: true
+  blockinfile:
+    state: present
+    insertafter: EOF
+    dest: /etc/hosts
+    marker: "\n\n# -- hosts: ANSIBLE MANAGED BLOCK --"
+    block: "{{ lookup('file', '/tmp/hosts_tmp') }}"
+
+
+- name: Admin | Hosts | Cleanup
+  tags: admin,hosts,cleanup
+  become: true
+  file:
+    path: '{{ item }}'
+    state: absent
+  with_items:
+    - /tmp/hosts_tmp
